@@ -9,7 +9,15 @@ class ListKandidat extends StatelessWidget {
 
   ListKandidat(this.id, this.title, this.description, this.image);
 
-  void goToNewScreen(BuildContext context) {}
+  void goToNewScreen(BuildContext context) {
+    Navigator.of(context).pushNamed('/kandidat', arguments: {
+      'id': id,
+      'name': title,
+      'description': description,
+      'image': image,
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // return InkWell(
@@ -52,6 +60,7 @@ class ListKandidat extends StatelessWidget {
           leading: Image.asset(image),
           title: Text(title),
           subtitle: Text(description),
+          onTap: () => goToNewScreen(context),
         ),
       ),
     );

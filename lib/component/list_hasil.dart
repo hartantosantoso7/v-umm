@@ -8,6 +8,14 @@ class ListHasil extends StatelessWidget {
   final String image;
 
   ListHasil(this.id, this.title, this.description, this.image);
+  void goToNewScreen(BuildContext context) {
+    Navigator.of(context).pushNamed('/hasilKandidat', arguments: {
+      'id': id,
+      'name': title,
+      'description': description,
+      'image': image,
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +27,7 @@ class ListHasil extends StatelessWidget {
           leading: Image.asset(image),
           title: Text(title),
           subtitle: Text(description),
+          onTap: () => goToNewScreen(context),
         ),
       ),
     );

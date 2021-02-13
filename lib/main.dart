@@ -1,4 +1,6 @@
 import 'package:e_voting_umm/view/kandidat_view.dart';
+import 'package:e_voting_umm/view/category_view.dart';
+import 'package:e_voting_umm/view/hasil_kandidat_view.dart';
 import 'package:flutter/material.dart';
 import 'login_page.dart';
 import 'package:e_voting_umm/view/splashscreen_view.dart';
@@ -17,7 +19,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.pink),
       home: SplashScreenPage(),
-      routes: {'/kandidat': (ctx) => KandidatView()},
+      routes: {
+        '/kategori': (ctx) => CategoryView(),
+        '/kandidat': (ctx) => KandidatView(),
+        '/hasilKandidat': (ctx) => HasilKandidatView()
+      },
     );
   }
 }

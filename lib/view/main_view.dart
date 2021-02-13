@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'kandidat_view.dart';
+import 'category_view.dart';
 import 'hasil_view.dart';
 import 'jadwal_view.dart';
 import 'profile_view.dart';
@@ -40,7 +40,7 @@ class _MainPageState extends State<MainPage>
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
-          KandidatView(),
+          CategoryView(),
           HasilPage(),
           JadwalPage(),
           ProfilePage(),
